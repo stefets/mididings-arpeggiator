@@ -11,21 +11,22 @@ hook(
 )
 
 config(
-    client_name='synth-studio',
-    in_ports=[
-        ('in1', 'microSTATION:.*'),
-        ('in2')
-    ],
+    client_name='SD-90-ARPEGGIATOR',
+    in_ports = [
+        #('Q49  - MIDI IN 1', '24:0','.*Q49 MIDI 1'), # Alesis Q49 in USB MODE
+        ('in1', '20:2','.*SD-90 MIDI 1'),
+        ('in2', '20:3','.*SD-90 MIDI 2') ],
+
     out_ports=[
-        ('out1-mb-1', 'MicroBrute:.*'),
-        ('out2-vk-1', 'CH345:.*'),
-        ('out3-ms', 'microSTATION:.*'),
-        ('out3-ms-1', 'microSTATION:.*'),
-        ('out3-ms-2', 'microSTATION:.*'),
-        ('out3-ms-3', 'microSTATION:.*'),
-        ('out3-ms-4', 'microSTATION:.*'),
-        ('out3-ms-10', 'microSTATION:.*'),
-        ('out4-sq1', 'SQ-1:.*')
+        ('out1-mb-1', '20:0','.*SD-90 Part A'),
+        ('out2-vk-1', '20:0','.*SD-90 Part A'),
+        ('out3-ms',   '20:0','.*SD-90 Part A'),
+        ('out3-ms-1', '20:0','.*SD-90 Part A'),
+        ('out3-ms-2', '20:0','.*SD-90 Part A'),
+        ('out3-ms-3', '20:0','.*SD-90 Part A'),
+        ('out3-ms-4', '20:0','.*SD-90 Part A'),
+        ('out3-ms-10','20:0','.*SD-90 Part A'),
+        ('out4-sq1',  '20:0','.*SD-90 Part A'),
     ],
     initial_scene=1,
 )
